@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="Ballast tank - full">
+    <pose>0.0 0.0 0.0  1.5707 0.0 0.0</pose>
+    <static>true</static>
+    
+    <link name="base_link"/>
+
+    <link name="awnings_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_awnings/meshes/awnings.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_awnings/meshes/awnings.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_awnings/materials/scripts/repeated.material</uri>
+            <name>AwningsMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint type="fixed" name="awnings_joint"> 
+      <pose frame=''>0.0 0.0 0.0  0.0 0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>awnings_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="beams_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_beams_top/meshes/beams_top.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_beams_top/meshes/beams_top.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_beams_top/materials/scripts/repeated.material</uri>
+            <name>BeamsMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint type="fixed" name="beams_joint"> 
+      <pose frame=''>0.0 0.0 0.0  0.0 0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>beams_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="floors_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_floors/meshes/floors.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_floors/meshes/floors.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_floors/materials/scripts/repeated.material</uri>
+            <name>FloorsMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint type="fixed" name="floors_joint"> 
+      <pose frame=''>0.0 0.0 0.0  0.0 0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>floors_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="fronts_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_fronts/meshes/tank_fronts.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_fronts/meshes/tank_fronts.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_fronts/materials/scripts/repeated.material</uri>
+            <name>FrontMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint type="fixed" name="fronts_joint"> 
+      <pose frame=''>0.0 0.0 0.0  0.0 0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>fronts_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="pipes_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_pipes/meshes/pipes_etc.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_pipes/meshes/pipes_etc.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_pipes/materials/scripts/repeated.material</uri>
+            <name>PipesMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint type="fixed" name="pipes_joint"> 
+      <pose frame=''>0.0 0.0 0.0  0.0 0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>pipes_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name="sides_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_sides/meshes/sides.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_sides/meshes/sides.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_sides/materials/scripts/repeated.material</uri>
+            <name>SidesMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+    <joint type="fixed" name="sides_joint"> 
+      <pose frame=''>0.0 0.0 0.0  0.0 0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>sides_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>

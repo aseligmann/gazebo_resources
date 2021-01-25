@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="Ballast tank - beams top">
+    <pose>0.0 0.0 0.0  1.5707 0.0 0.0</pose>
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_beams_top/meshes/beams_top.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_beams_top/meshes/beams_top.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_beams_top/materials/scripts/repeated.material</uri>
+            <name>BeamsMaterial</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

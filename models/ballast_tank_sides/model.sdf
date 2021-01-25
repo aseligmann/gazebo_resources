@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="Ballast tank - sides">
+    <pose>0.0 0.0 0.0  1.5707 0.0 0.0</pose>
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_sides/meshes/sides.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://ballast_tank_sides/meshes/sides.DAE</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ballast_tank_sides/materials/scripts/repeated.material</uri>
+            <name>SidesMaterial</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

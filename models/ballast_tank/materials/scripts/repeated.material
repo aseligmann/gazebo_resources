@@ -101,3 +101,20 @@ material PipesMaterial
     }
   }
 }
+
+material FullMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture ../textures/metal_aircraft_plates/metal_aircraft_interior_rusty_roughness.png
+        // Repeat the texture over the surface (4 per face)
+        scale 0.5 0.5
+      }
+    }
+  }
+}
